@@ -189,3 +189,20 @@ This MCP server is designed as a modular capability engine, not a full applicati
 - Support for iterative, multi-step research workflows
 
 It is best used as part of a larger system where reasoning, control, and safety are handled externally.
+
+---
+
+## 👤 Maintainer
+Tuhin Kumar Dutta
+
+- 🌐 Website: https://www.tuhindutta.com/
+- 💼 LinkedIn: https://www.linkedin.com/in/t-k-dutta
+
+---
+
+## ⭐ Contribute
+Pull requests and issues are welcome.
+```bash
+git clone https://github.com/tuhindutta/news-agent-mcp-server.git
+```
+Let’s build the most capable AI-driven data analysis toolkit together.
