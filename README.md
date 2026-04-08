@@ -205,4 +205,3 @@ Pull requests and issues are welcome.
 ```bash
 git clone https://github.com/tuhindutta/news-agent-mcp-server.git
 ```
-Let’s build the most capable AI-driven data analysis toolkit together.
