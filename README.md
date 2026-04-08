@@ -91,3 +91,101 @@ External Dependency:
 Role:
 - Acts as the entry point for discovery
 - Provides structured, machine-consumable data for agents
+ 
+ ---
+
+ ## 6. Deep Research Pattern
+
+This server is designed to support iterative research workflows:
+```
+Topic → News → URLs → Scrape → Extract Insights → Discover New URLs → Repeat (bounded)
+```
+
+This pattern enables agents to:
+
+- Start with high-level discovery
+- Expand into detailed content
+- Traverse information progressively
+
+The MCP server provides the building blocks, while:
+
+- The agent controls reasoning
+- The gateway enforces limits and safety
+
+---
+
+## 7. Interface Contract
+Input/Output Design
+- All tools accept string inputs
+- All tools return string outputs
+
+### Internal vs External Representation
+| Layer    | Representation               |
+| -------- | ---------------------------- |
+| Internal | Structured (Pydantic models) |
+| External | Serialized strings           |
+
+Rationale
+- Eliminates parsing friction for LLMs
+- Keeps integration simple and predictable
+- Maintains flexibility across tools
+
+---
+
+## 8. Setup & Deployment
+Environment Variables
+```bash
+NEWSDATA_API_KEY=your_api_key
+FIRECRAWL_API_KEY=your_api_key
+```
+
+---
+
+### Running with Docker
+The server is containerized and can be run using Docker:
+```bash
+docker run -p <host_port>:<container_port> <image_name>
+```
+Endpoint
+```bash
+/mcp
+```
+
+---
+
+## 9. Limitations (Intentional)
+
+This server intentionally avoids implementing:
+- Rate limiting
+- Authentication
+- Request validation layers
+- Recursion or depth control
+
+### Why?
+These concerns are handled by the upstream gateway layer, allowing this service to remain:
+- Simple
+- Focused
+- Easy to maintain
+
+---
+
+## 10. Future Enhancements
+
+Potential improvements include:
+- Optional structured output mode for all tools
+- Tool metadata and schema exposure for dynamic discovery
+- Built-in safety primitives (optional, toggle-based)
+- Observability hooks (logging, tracing)
+- Configurable content limits (size, depth, etc.)
+
+---
+
+## Final Note
+
+This MCP server is designed as a modular capability engine, not a full application. Its strength lies in:
+
+- Clean separation of concerns
+- LLM-friendly interface design
+- Support for iterative, multi-step research workflows
+
+It is best used as part of a larger system where reasoning, control, and safety are handled externally.
