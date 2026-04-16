@@ -120,8 +120,9 @@ Input/Output Design
 - All tools return string outputs
 
 ### Internal vs External Representation
+
 | Layer    | Representation               |
-| -------- | ---------------------------- |
+|----------|------------------------------|
 | Internal | Structured (Pydantic models) |
 | External | Serialized strings           |
 
