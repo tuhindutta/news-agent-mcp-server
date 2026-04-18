@@ -206,3 +206,4 @@ Pull requests and issues are welcome.
 ```bash
 git clone https://github.com/tuhindutta/news-agent-mcp-server.git
 ```
+DockerHub: [https://hub.docker.com/r/tkdutta/news-agent-mcp-server](https://hub.docker.com/r/tkdutta/news-agent-mcp-server)
